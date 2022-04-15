@@ -4,11 +4,11 @@ from pathlib import Path
 env = environ.Env()
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
-APPS_DIR 
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-APPS_DIR = ROOT_DIR / "core_apps"
+APPS_DIR = ROOT_DIR / 'core_apps'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG", False) 
@@ -36,7 +36,7 @@ THIRD_PARTY_APPS = [
 ]
 
 #my apps
-LOCAL_APPS = []
+LOCAL_APPS = ['core_apps.common', 'core_apps.profiles', 'core_apps.users']
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -52,12 +52,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'backend.urls'
+ROOT_URLCONF = 'backend-api.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [str(APP_DIRS / "templates")],
+        'DIRS': [str(APPS_DIR / "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,12 +73,12 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'backend-api.wsgi.application'
 
 
 # Database
 DATABASES = {"default":env.db("DATABASE_URL")}
-DATABASES["default"]["ATOMIC_REQUESTS"] = TRUE
+DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.Argon2PasswordHasher',
@@ -123,7 +123,7 @@ ADMIN_URL = "supersecret/"
 
 ADMINS = [("Vladimir Mauer","mauer.vladimir@web.de")]
 
-MANAGERS = ADMIN
+MANAGERS = ADMINS
 
 
 

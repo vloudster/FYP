@@ -2,7 +2,7 @@ from .base import *
 from .base import env
 
 
-DEBUG = TRUE
+DEBUG = True
 
 
 
