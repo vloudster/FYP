@@ -1,5 +1,0 @@
-POSTGRES_HOST = postgres 
-POSTGRES_PORT = 5432
-POSTGRES_DB = vloudsterdb
-POSTGRES_USER = vloudster
-POSTGRES_PASSWORD = fypvladimirmauer
