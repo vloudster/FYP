@@ -1,5 +1,5 @@
 POSTGRES_HOST = postgres 
-POSGRES_PORT = 5432
+POSTGRES_PORT = 5432
 POSTGRES_DB = vloudsterdb
 POSTGRES_USER = vloudster
 POSTGRES_PASSWORD = fypvladimirmauer
