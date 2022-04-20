@@ -19,7 +19,7 @@ class Profile(TimeStampedUUIDModel):
     gender = models.CharField(verbose_name=_("gender"),choices = Gender.choices, default=Gender.OTHER, max_length=15)
     country = CountryField(verbose_name=_("country"), default="IE", blank=False, null=False)
     city = models.CharField(verbose_name=_("city"),max_length=100,default="Galway", blank=False, null=False)
-    profile_phote = models.ImageField(verbose_name=_("profile photo"), default="/default_photo.png")
+    profile_photo = models.ImageField(verbose_name=_("profile_photo"), blank=True)
     
     follows = models.ManyToManyField("self", symmetrical=False, related_name="followed_by", blank=True)
     

@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('gender', models.CharField(choices=[('male', 'male'), ('female', 'female'), ('other', 'other')], default='other', max_length=15, verbose_name='gender')),
                 ('country', django_countries.fields.CountryField(default='IE', max_length=2, verbose_name='country')),
                 ('city', models.CharField(default='Galway', max_length=100, verbose_name='city')),
-                ('profile_phote', models.ImageField(default='/default_photo.png', upload_to='', verbose_name='profile photo')),
+                ('profile_photo', models.ImageField(default='/default_photo.png', upload_to='', verbose_name='profile photo')),
                 ('follows', models.ManyToManyField(blank=True, related_name='followed_by', to='profiles.profile')),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='profile', to=settings.AUTH_USER_MODEL)),
             ],
