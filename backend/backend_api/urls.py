@@ -10,7 +10,7 @@ from rest_framework import permissions
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Backend-API",
+        title="Backend_API",
         default_version="v1",
         description= "API endpoints for fyp backend project" 
     ),

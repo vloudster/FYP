@@ -18,4 +18,4 @@ EMAIL_HOST=env("EMAIL_HOST",default="mailhog")
 EMAIL_PORT=env("EMAIL_PORT")
 DEFAULT_FROM_EMAIL="mauer.vladimir@web.de"
 DOMAIN=env("DOMAIN")
-SITE_NAME = "backend-api"
+SITE_NAME = "backend_api"

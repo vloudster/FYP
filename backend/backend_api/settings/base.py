@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'backend-api.urls'
+ROOT_URLCONF = 'backend_api.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend-api.wsgi.application'
+WSGI_APPLICATION = 'backend_api.wsgi.application'
 
 
 # Database
@@ -155,6 +155,11 @@ CELERY_TIMEZONE= 'Europe/Dublin'
 CELERY_ACCEPT_CONTENT=['json']
 CELERY_TASK_SERIALIZER='json'
 CELERY_RESULT_SERIALIZER='json'
+
+REST_FRAMEWORK= {
+    "EXCEPTION_HANDLER": "core_apps.common.exceptions.common_exception_handler",
+    "NON_FIELD_ERRORS_KEY":"error",
+}
 
 LOGGING = {
     'version': 1,

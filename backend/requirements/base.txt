@@ -16,4 +16,5 @@ packaging==21.3
 flower==1.0.0
 django-celery-email==3.0.0
 phonenumbers==8.12.46
+Pillow==9.1.0
 

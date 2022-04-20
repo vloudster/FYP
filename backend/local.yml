@@ -21,7 +21,7 @@ services:
       - mailhog
       - redis
     networks:
-      - backend-api
+      - backend_api
 
   postgres:
     build:
@@ -34,7 +34,7 @@ services:
     env_file:
       - ./.envs/.local/.postgres 
     networks:
-      - backend-api
+      - backend_api
 
   mailhog:
     image: mailhog/mailhog:v1.0.0
@@ -42,7 +42,7 @@ services:
     ports:
       - "8025:8025"
     networks:
-      - backend-api
+      - backend_api
 
   nginx:
     restart: always
@@ -57,14 +57,14 @@ services:
     ports:
       - "8080:80"
     networks:
-      - backend-api
+      - backend_api
 
 
   redis:
     image: redis:6-alpine
     container_name: redis
     networks:
-      - backend-api
+      - backend_api
 
   celery_worker:
     build:
@@ -82,7 +82,7 @@ services:
       - postgres
       - mailhog
     networks:
-      - backend-api
+      - backend_api
   
   flower:
     build:
@@ -101,12 +101,12 @@ services:
       - redis
       - postgres
     networks:
-      - backend-api
+      - backend_api
 
 
 
 networks:
-  backend-api:
+  backend_api:
     driver: bridge
 
 volumes:
