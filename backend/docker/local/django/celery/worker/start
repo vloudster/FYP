@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+watchmedo auto-restart -d backend-api/. -p '*.py' -- celery --app backend-api worker --loglevel=info
